@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.restaurantapp.MainController"
+           prefWidth="860" prefHeight="700">
+
+    <!-- Background Image -->
+    <ImageView fitWidth="860" fitHeight="700" preserveRatio="false">
+        <image>
+            <Image url="@BACKGROUND.png"/>
+        </image>
+    </ImageView>
+
+    <!-- Main Content -->
+    <BorderPane styleClass="main-root">
+
+        <top>
+            <VBox alignment="CENTER" spacing="4" styleClass="header-box">
+                <padding><Insets top="18" bottom="12"/></padding>
+                <Label text="🍽  DEE'S RESTAURANT" styleClass="header-title"/>
+                <Label text="Point of Sale System"    styleClass="header-sub"/>
+                <Label fx:id="timeLabel"              styleClass="header-time"/>
+            </VBox>
+        </top>
+
+        <center>
+            <GridPane hgap="18" vgap="18" styleClass="centre-grid">
+                <padding><Insets top="20" right="25" bottom="10" left="25"/></padding>
+
+                <!-- DINNER -->
+                <VBox styleClass="section-box" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="🍖  DINNER" styleClass="section-title"/>
+                    <Separator styleClass="section-sep"/>
+                    <CheckBox fx:id="cbDinner0" text="Rice + Beef          M45.00"
+                              styleClass="item-check" onAction="#onDinnerChanged"/>
+                    <CheckBox fx:id="cbDinner1" text="Rice + Chicken       M40.00"
+                              styleClass="item-check" onAction="#onDinnerChanged"/>
+                    <CheckBox fx:id="cbDinner2" text="Macaroni + Beef      M35.00"
+                              styleClass="item-check" onAction="#onDinnerChanged"/>
+                    <CheckBox fx:id="cbDinner3" text="Fish and Chips       M47.50"
+                              styleClass="item-check" onAction="#onDinnerChanged"/>
+                </VBox>
+
+                <!-- DESSERT -->
+                <VBox styleClass="section-box" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="🍰  DESSERT" styleClass="section-title"/>
+                    <Separator styleClass="section-sep"/>
+                    <RadioButton fx:id="rbDessert0" text="Custard and Jelly    M30.00"
+                                 styleClass="item-radio" onAction="#onDessertChanged"/>
+                    <RadioButton fx:id="rbDessert1" text="Chocolate Cake Slice M25.00"
+                                 styleClass="item-radio" onAction="#onDessertChanged"/>
+                    <RadioButton fx:id="rbDessert2" text="Cupcakes             M20.00"
+                                 styleClass="item-radio" onAction="#onDessertChanged"/>
+                    <RadioButton fx:id="rbDessert3" text="Cup Cake             M25.00"
+                                 styleClass="item-radio" onAction="#onDessertChanged"/>
+                </VBox>
+
+                <!-- DRINKS -->
+                <VBox styleClass="section-box" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="🥤  DRINKS" styleClass="section-title"/>
+                    <Separator styleClass="section-sep"/>
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <Label text="Choose Drink:" styleClass="field-label"/>
+                        <ComboBox fx:id="drinkCombo"
+                                  styleClass="drink-combo"
+                                  onAction="#onDrinkChanged"/>
+                    </HBox>
+                </VBox>
+
+                <!-- PAYMENT -->
+                <VBox styleClass="section-box" GridPane.columnIndex="1" GridPane.rowIndex="1" spacing="8">
+                    <Label text="💳  PAYMENT" styleClass="section-title"/>
+                    <Separator styleClass="section-sep"/>
+                    <Label text="Total Amount (M)"    styleClass="field-label"/>
+                    <TextField fx:id="totalField"     styleClass="readonly-field"
+                               editable="false" text="0.00"/>
+                    <Label text="Amount Tendered (M)" styleClass="field-label"/>
+                    <TextField fx:id="tenderedField"  styleClass="edit-field"
+                               promptText="0.00"/>
+                    <Label text="Change (M)"          styleClass="field-label"/>
+                    <TextField fx:id="changeField"    styleClass="readonly-field"
+                               editable="false" text="0.00"/>
+                </VBox>
+
+            </GridPane>
+        </center>
+
+        <bottom>
+            <HBox spacing="15" alignment="CENTER" styleClass="bottom-bar">
+                <padding><Insets top="14" right="20" bottom="14" left="20"/></padding>
+                <Button fx:id="purchaseBtn" text="🛒  Purchase"
+                        styleClass="btn-green"  onAction="#handlePurchase"/>
+                <Button fx:id="resetBtn"    text="🔄  Reset"
+                        styleClass="btn-orange" onAction="#handleReset"/>
+                <Button fx:id="exitBtn"     text="🚪  Exit"
+                        styleClass="btn-red"    onAction="#handleExit"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="statusBar" text="Welcome to DEE Restaurant!"
+                       styleClass="status-bar-label"/>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
+</StackPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.restaurantapp.LoginController"
+           styleClass="login-root"
+           prefWidth="500" prefHeight="600">
+
+    <!-- Background Image -->
+    <ImageView fitWidth="500" fitHeight="600" preserveRatio="false">
+        <image>
+            <Image url="@BACKGROUND.png"/>
+        </image>
+    </ImageView>
+
+    <Rectangle fx:id="glowRect" width="420" height="500"
+               arcWidth="40" arcHeight="40"
+               styleClass="glow-rect"/>
+
+    <VBox alignment="CENTER" spacing="14"
+          maxWidth="400"
+          styleClass="login-card">
+
+        <padding><Insets top="40" right="50" bottom="40" left="50"/></padding>
+
+        <Label text="🍽" styleClass="login-logo"/>
+        <Label text=" DEE'S" styleClass="login-title"/>
+        <Label text="Welcome — Please Sign In" styleClass="login-sub"/>
+
+        <Separator styleClass="login-sep"/>
+
+        <Label text="Username" styleClass="field-label"/>
+        <TextField fx:id="usernameField"
+                   promptText="Enter any username"
+                   styleClass="login-field"/>
+
+        <Label text="Password" styleClass="field-label"/>
+        <PasswordField fx:id="passwordField"
+                       promptText="Enter any password"
+                       styleClass="login-field"
+                       onAction="#handleLogin"/>
+
+        <Label fx:id="statusLabel" text="" styleClass="status-label"/>
+
+        <Button fx:id="enterBtn"
+                text="  ENTER  "
+                styleClass="enter-btn"
+                onAction="#handleLogin"/>
+
+        <Label text="Enter any username and password to login"
+               styleClass="hint-label"/>
+
+    </VBox>
+</StackPane>
