@@ -29,7 +29,8 @@
         </top>
 
         <center>
-            <GridPane hgap="18" vgap="18" styleClass="centre-grid">
+            <GridPane hgap="18" vgap="18" styleClass="centre-grid"
+                      alignment="CENTER">
                 <padding><Insets top="20" right="25" bottom="10" left="25"/></padding>
 
                 <!-- DINNER -->

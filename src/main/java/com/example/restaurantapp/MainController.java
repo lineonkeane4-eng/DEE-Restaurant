@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -139,7 +141,7 @@ public class MainController implements Initializable {
                         "Total:    M" + String.format("%.2f", model.getTotalAmount()) + "\n" +
                         "Tendered: M" + String.format("%.2f", tendered) + "\n" +
                         "Change:   M" + String.format("%.2f", model.getChange()) + "\n\n" +
-                        "Receipt saved to receipt.txt\nEnjoy your food!");
+                        "Receipt opening in Notepad on your Desktop!");
 
         statusBar.setText("✅ Purchase saved — " + model.getTimestamp());
         statusBar.setTextFill(Color.web("#00ff88"));
@@ -182,10 +184,14 @@ public class MainController implements Initializable {
     }
 
     private void saveReceipt(double tendered) {
-        try (PrintWriter pw = new PrintWriter(new FileWriter("receipt.txt", true))) {
+        // Saves to Desktop — false means overwrite, not append
+        String path = System.getProperty("user.home") + "\\Desktop\\receipt.txt";
+        File file = new File(path);
+
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file, false))) {
             pw.println("================================================");
-            pw.println("         DEE'S RESTAURANT");
-            pw.println("              RECEIPT");
+            pw.println("            DEE'S RESTAURANT");
+            pw.println("               RECEIPT");
             pw.println("================================================");
             pw.println("  Date & Time : " + model.getTimestamp());
             pw.println("------------------------------------------------");
@@ -200,10 +206,20 @@ public class MainController implements Initializable {
             pw.println("  YOU ARE WELCOME AT DEE'S RESTAURANT");
             pw.println("  ...ENJOY YOUR FOOD!");
             pw.println("================================================");
-            pw.println();
+            pw.flush();
+
         } catch (IOException ex) {
             showAlert(Alert.AlertType.ERROR, "File Error",
                     "Could not save receipt:\n" + ex.getMessage());
+            return;
+        }
+
+        // Auto open receipt in Notepad after saving
+        try {
+            Desktop.getDesktop().open(file);
+        } catch (IOException ex) {
+            showAlert(Alert.AlertType.ERROR, "Open Error",
+                    "Receipt saved but could not open:\n" + ex.getMessage());
         }
     }
 

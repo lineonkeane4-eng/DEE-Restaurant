@@ -3,135 +3,199 @@
     -fx-background-color: transparent;
 }
 .glow-rect {
-    -fx-fill: transparent;
-    -fx-stroke: #e94560;
+    -fx-fill: rgba(0,0,0,0.45);
+    -fx-stroke: #ff6b00;
     -fx-stroke-width: 2;
-    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.8), 30, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(255,107,0,0.8), 30, 0, 0, 0);
 }
 .login-card {
-    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-background-color: rgba(0,0,0,0.55);
     -fx-background-radius: 20;
     -fx-border-radius: 20;
-    -fx-border-color: rgba(255,255,255,0.15);
-    -fx-border-width: 1;
+    -fx-border-color: rgba(255,107,0,0.6);
+    -fx-border-width: 2;
 }
 .login-logo  { -fx-font-size: 58px; }
 .login-title {
     -fx-font-family: "Georgia";
-    -fx-font-size: 20px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e94560;
-    -fx-effect: dropshadow(gaussian, #e94560, 10, 0, 0, 0);
+    -fx-text-fill: #ff6b00;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
-.login-sub   { -fx-font-size: 13px; -fx-text-fill: #aaaaaa; }
-.login-sep   { -fx-background-color: rgba(255,255,255,0.2); }
+.login-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 6, 0, 0, 0);
+}
+.login-sep { -fx-background-color: rgba(255,107,0,0.5); }
+
 .field-label {
-    -fx-text-fill: #cccccc;
+    -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 12px;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
 }
 .login-field {
-    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-color: rgba(255,255,255,0.2);
     -fx-text-fill: white;
-    -fx-prompt-text-fill: #888888;
+    -fx-prompt-text-fill: #dddddd;
     -fx-background-radius: 8;
-    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-color: rgba(255,107,0,0.7);
     -fx-border-radius: 8;
     -fx-padding: 8 12 8 12;
     -fx-font-size: 13px;
 }
-.status-label { -fx-text-fill: #ff6b6b; -fx-font-size: 12px; }
+.status-label {
+    -fx-text-fill: #ff4444;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
 .enter-btn {
-    -fx-background-color: #e94560;
+    -fx-background-color: #ff6b00;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
     -fx-background-radius: 25;
-    -fx-padding: 10 30 10 30;
+    -fx-padding: 10 40 10 40;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, black, 8, 0, 0, 0);
 }
-.enter-btn:hover { -fx-background-color: #c73652; }
-.hint-label { -fx-text-fill: #666666; -fx-font-size: 11px; }
+.enter-btn:hover { -fx-background-color: #cc5500; }
+.hint-label {
+    -fx-text-fill: #eeeeee;
+    -fx-font-size: 11px;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
 
 /* ── MAIN ── */
 .main-root {
     -fx-background-color: transparent;
 }
 .header-box {
-    -fx-background-color: rgba(15,52,96,0.80);
+    -fx-background-color: rgba(0,0,0,0.70);
 }
 .header-title {
     -fx-font-family: "Georgia";
     -fx-font-size: 26px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
-    -fx-effect: dropshadow(gaussian, black, 8, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
-.header-sub  { -fx-font-size: 13px; -fx-text-fill: #ffcccc; -fx-font-style: italic; }
-.header-time { -fx-font-family: "Courier New"; -fx-font-size: 12px; -fx-text-fill: #aaddff; }
+.header-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ff6b00;
+    -fx-font-style: italic;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
+.header-time {
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
 
 .centre-grid { -fx-background-color: transparent; }
 
 .section-box {
-    -fx-background-color: rgba(0,0,0,0.55);
+    -fx-background-color: rgba(0,0,0,0.60);
     -fx-background-radius: 12;
-    -fx-border-color: rgba(233,69,96,0.5);
+    -fx-border-color: rgba(255,107,0,0.7);
     -fx-border-radius: 12;
-    -fx-border-width: 1;
+    -fx-border-width: 2;
     -fx-padding: 15;
     -fx-spacing: 10;
     -fx-min-width: 340;
 }
-.section-title { -fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #e94560; }
-.section-sep   { -fx-background-color: rgba(255,255,255,0.15); }
+.section-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: #ff6b00;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
+.section-sep { -fx-background-color: rgba(255,107,0,0.4); }
 
-.item-check { -fx-text-fill: #dddddd; -fx-font-family: "Courier New"; -fx-font-size: 13px; }
-.item-radio { -fx-text-fill: #dddddd; -fx-font-family: "Courier New"; -fx-font-size: 13px; }
+.item-check {
+    -fx-text-fill: white;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
+.item-radio {
+    -fx-text-fill: white;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
 
 .drink-combo {
-    -fx-background-color: #16213e;
-    -fx-border-color: #e94560;
+    -fx-background-color: rgba(0,0,0,0.6);
+    -fx-border-color: #ff6b00;
     -fx-border-radius: 6;
     -fx-pref-width: 200;
 }
 
 .readonly-field {
-    -fx-background-color: #0f3460;
+    -fx-background-color: rgba(0,0,0,0.7);
     -fx-text-fill: #00ff88;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
-    -fx-border-color: #1a6b4a;
+    -fx-border-color: #ff6b00;
     -fx-border-radius: 6;
     -fx-padding: 6 10 6 10;
 }
 .edit-field {
-    -fx-background-color: #16213e;
+    -fx-background-color: rgba(255,255,255,0.15);
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-background-radius: 6;
-    -fx-border-color: #e94560;
+    -fx-border-color: #ff6b00;
     -fx-border-radius: 6;
     -fx-padding: 6 10 6 10;
 }
 
-.bottom-bar { -fx-background-color: rgba(22,33,62,0.85); }
-.btn-green  {
-    -fx-background-color: #27ae60; -fx-text-fill: white;
-    -fx-font-weight: bold; -fx-background-radius: 20;
-    -fx-padding: 8 22 8 22; -fx-cursor: hand;
+.bottom-bar { -fx-background-color: rgba(0,0,0,0.75); }
+
+/* Purchase button — Golden Yellow */
+.btn-green {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 22 8 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, black, 6, 0, 0, 0);
 }
-.btn-green:hover  { -fx-background-color: #1e8449; }
+.btn-green:hover { -fx-background-color: #d68910; }
+
+/* Reset button — Purple */
 .btn-orange {
-    -fx-background-color: #e67e22; -fx-text-fill: white;
-    -fx-font-weight: bold; -fx-background-radius: 20;
-    -fx-padding: 8 22 8 22; -fx-cursor: hand;
+    -fx-background-color: #8e44ad;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 22 8 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, black, 6, 0, 0, 0);
 }
-.btn-orange:hover { -fx-background-color: #ca6f1e; }
-.btn-red    {
-    -fx-background-color: #e94560; -fx-text-fill: white;
-    -fx-font-weight: bold; -fx-background-radius: 20;
-    -fx-padding: 8 22 8 22; -fx-cursor: hand;
+.btn-orange:hover { -fx-background-color: #6c3483; }
+
+/* Exit button — Dark Navy Blue */
+.btn-red {
+    -fx-background-color: #1a5276;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 22 8 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, black, 6, 0, 0, 0);
 }
-.btn-red:hover    { -fx-background-color: #c73652; }
-.status-bar-label { -fx-text-fill: #aaaaaa; -fx-font-style: italic; -fx-font-size: 12px; }
+.btn-red:hover { -fx-background-color: #154360; }
+
+.status-bar-label {
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 0);
+}
